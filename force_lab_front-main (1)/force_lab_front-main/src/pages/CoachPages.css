@@ -1,0 +1,300 @@
+.coach-page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.coach-page .header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.coach-page .header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.coach-page .logo { cursor: pointer; }
+
+.coach-page .logo-text {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.coach-page .header-actions { display: flex; gap: 10px; }
+
+.coach-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.coach-page main {
+  padding-top: 88px;
+  padding-bottom: 60px;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #1a202c;
+  letter-spacing: -0.02em;
+}
+
+/* Сетка спортсменов */
+.athlete-card {
+  background: white;
+  border: 1px solid #f1f5f9;
+  border-radius: 14px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.athlete-card:hover {
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.athlete-avatar-small {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1a1a2e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.active { background: #22c55e; }
+.status-dot.inactive { background: #94a3b8; }
+
+.card-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 16px 0;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-meta-row svg {
+  color: #cbd5e1;
+  flex-shrink: 0;
+}
+
+.meta-label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  min-width: 70px;
+}
+
+.meta-value {
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Детальный просмотр */
+.athlete-detail {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #f1f5f9;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #475569;
+  transition: all 0.2s;
+  margin-bottom: 24px;
+}
+
+.btn-back:hover {
+  background: #f8fafc;
+  color: #1a202c;
+}
+
+.athlete-profile-card {
+  text-align: center;
+  padding: 32px;
+  background: #fafbfc;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.athlete-avatar-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #1a1a2e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 auto 16px;
+}
+
+.athlete-profile-card h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 24px 0;
+}
+
+.athlete-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  text-align: left;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: white;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  color: #475569;
+}
+
+.info-item svg {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Кнопки */
+.btn-outline, .btn-primary {
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-outline {
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.btn-outline:hover { background: #f8fafc; }
+
+.btn-primary {
+  background: #1a1a2e;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover { background: #2a2a4e; }
+
+.no-data {
+  text-align: center;
+  padding: 80px 20px;
+  color: #94a3b8;
+  border: 2px dashed #e2e8f0;
+  border-radius: 16px;
+}
+
+.no-data svg {
+  margin-bottom: 16px;
+  color: #cbd5e1;
+}
+
+.no-data-hint {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin-top: 6px;
+}
+
+.loading, .error { text-align: center; padding: 60px; }
+.error { color: #ef4444; background: #fef2f2; border-radius: 16px; }
+
+@media (max-width: 768px) {
+  .athlete-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-actions {
+    flex-direction: column;
+  }
+  
+  .coach-page .header-container {
+    flex-direction: column;
+    height: auto;
+    padding: 14px 0;
+    gap: 10px;
+  }
+  
+  .coach-page main {
+    padding-top: 130px;
+  }
+}

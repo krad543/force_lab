@@ -1,0 +1,413 @@
+/* ProgressPage.css */
+.progress-page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.progress-page .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.progress-page .header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.progress-page .logo {
+  cursor: pointer;
+}
+
+.progress-page .logo-text {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.progress-page .header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.progress-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.progress-page main {
+  padding-top: 90px;
+  padding-bottom: 60px;
+}
+
+/* Статистика */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+font-size: 2rem;
+margin-bottom: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.stat-icon .icon {
+width: 48px;
+height: 48px;
+color: #2a5298;
+}
+
+.record-icon {
+font-size: 2rem;
+min-width: 50px;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.record-icon .icon {
+width: 40px;
+height: 40px;
+color: #2a5298;
+}
+
+.page-title {
+font-size: 2rem;
+font-weight: 700;
+color: #1e3c72;
+margin-bottom: 32px;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.page-title .page-icon {
+width: 40px;
+height: 40px;
+color: #2a5298;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e3c72;
+}
+
+.stat-label {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Форма добавления рекорда */
+.add-record-form {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.add-record-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: #1e3c72;
+}
+
+.add-record-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: #f8fafc;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2a5298;
+  box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+  background: white;
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Графики прогресса */
+.progress-charts {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: #1a202c;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  color: #1a202c;
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  height: 300px;
+  position: relative;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.simple-chart {
+  position: relative;
+  height: 100%;
+  border-bottom: 2px solid #e2e8f0;
+  border-left: 2px solid #e2e8f0;
+  margin-left: 40px;
+  margin-bottom: 30px;
+}
+
+.chart-point {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #2a5298;
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.chart-point:hover {
+  transform: translate(-50%, 50%) scale(1.5);
+  background: #1e3c72;
+}
+
+.point-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a202c;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  margin-bottom: 8px;
+}
+
+.chart-point:hover .point-tooltip {
+  display: block;
+}
+
+/* Последние рекорды */
+.recent-records {
+  margin-top: 40px;
+}
+
+.records-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.record-item {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s;
+}
+
+.record-item:hover {
+  transform: translateX(4px);
+}
+
+.record-icon {
+  font-size: 2rem;
+  min-width: 50px;
+  text-align: center;
+}
+
+.record-info {
+  flex: 1;
+}
+
+.record-exercise {
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 4px;
+}
+
+.record-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2a5298;
+  margin-bottom: 4px;
+}
+
+.record-date {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.record-notes {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  max-width: 200px;
+  text-align: right;
+}
+
+/* Кнопки */
+.btn-outline {
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+  color: #4a5568;
+}
+
+.btn-outline:hover {
+  border-color: #2a5298;
+  color: #2a5298;
+}
+
+.btn-primary {
+  padding: 8px 20px;
+  background: #2a5298;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #1e3c72;
+}
+
+/* Загрузка и ошибки */
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.error {
+  text-align: center;
+  padding: 60px;
+  color: #e74c3c;
+  background: #fef2f2;
+  border-radius: 20px;
+  margin: 40px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .progress-page .header-container {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .progress-page main {
+    padding-top: 130px;
+  }
+  
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .record-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .record-notes {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .chart-container {
+    height: 200px;
+  }
+}

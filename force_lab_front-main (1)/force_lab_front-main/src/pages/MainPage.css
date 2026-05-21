@@ -1,0 +1,1205 @@
+/* frontend/src/pages/MainPage.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.5;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .logo-icon {
+    font-size: 1.8rem;
+  }
+  
+  .logo-text {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #2a5298;
+  }
+  
+  .nav-actions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .btn-login, .btn-profile {
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    color: #4a5568;
+  }
+  
+  .btn-login:hover, .btn-profile:hover {
+    border-color: #2a5298;
+    color: #2a5298;
+  }
+  
+  .btn-trial, .btn-logout {
+    padding: 8px 20px;
+    background: #2a5298;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
+  
+  .btn-trial:hover, .btn-logout:hover {
+    background: #1e3c72;
+  }
+  
+  /* Hero Section */
+  /* Hero Section с затемненным фоном */
+.hero {
+    position: relative;
+    padding: 160px 0 100px;
+    background-image: url('/1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Темно-синий оверлей поверх изображения */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 20, 50, 0.85); /* Темно-синий с прозрачностью */
+    /* Альтернативные варианты затемнения: */
+    /* background: linear-gradient(135deg, rgba(0, 30, 60, 0.9), rgba(0, 10, 30, 0.85)); */
+    /* background: rgba(26, 35, 126, 0.8); - более синий */
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 32px;
+    color: white;
+  }
+  
+  .title-accent {
+    background: linear-gradient(135deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 3.5rem;
+  }
+  
+  .btn-primary-large {
+    padding: 14px 40px;
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .btn-primary-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  /* Stats Section */
+  .stats {
+    padding: 60px 0;
+    background: #f8fafc;
+  }
+  
+  .stats-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #4a5568;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* Approach Section */
+  .approach {
+    padding: 80px 0;
+    background: white;
+  }
+  
+  .approach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  
+  .approach-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: #1e3c72;
+  }
+  
+  .approach-card p {
+    color: #4a5568;
+    line-height: 1.6;
+  }
+  
+  /* Programs Section */
+  .programs {
+    padding: 80px 0;
+    background: #f8fafc;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 48px;
+    color: #1a202c;
+  }
+  
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  
+  .program-card {
+    background: white;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .program-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .program-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #1e3c72;
+  }
+  
+  .program-subtitle {
+    color: #718096;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .program-list {
+    list-style: none;
+    margin-bottom: 24px;
+  }
+  
+  .program-list li {
+    padding: 8px 0;
+    color: #4a5568;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .program-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #2a5298;
+  }
+  
+  .program-link {
+    text-decoration: none;
+    color: #2a5298;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .program-link:hover {
+    color: #1e3c72;
+  }
+  
+  /* CTA Section */
+  .cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+  }
+  
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cta-content h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  
+  .cta-content p {
+    margin-bottom: 32px;
+    opacity: 0.9;
+  }
+  
+  .btn-cta {
+    padding: 12px 32px;
+    background: white;
+    color: #2a5298;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .btn-cta:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Footer */
+  .footer {
+    background: #1a202c;
+    color: white;
+    padding: 48px 0 24px;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .footer-info p {
+    color: #a0aec0;
+    line-height: 1.6;
+  }
+  
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  
+  .footer-column h4 {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: white;
+  }
+  
+  .footer-column a {
+    display: block;
+    color: #a0aec0;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+  }
+  
+  .footer-column a:hover {
+    color: white;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a0aec0;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 968px) {
+    .navbar {
+      flex-wrap: wrap;
+      height: auto;
+      padding: 16px 0;
+    }
+    
+    .nav-links {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      margin-top: 16px;
+    }
+    
+    .programs-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .approach-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+    
+    
+    
+    .title-accent {
+      font-size: 2.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-actions {
+      gap: 8px;
+    }
+    
+    .btn-login, .btn-trial, .btn-profile, .btn-logout {
+      padding: 8px 20px;
+      font-size: 0.95rem;
+
+    }
+    
+    .hero {
+      padding: 120px 0 60px;
+    }
+    
+    .program-card {
+      padding: 24px;
+    }
+  }
+ 
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background: white;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  
+  .feature-item {
+    text-align: center;
+    padding: 24px;
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+  
+  .feature-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #1e3c72;
+  }
+  
+  .feature-item p {
+    color: #4a5568;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 968px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+/* ── Добавить в конец MainPage.css ── */
+
+/* Секция с календарём */
+.main-calendar-section {
+    padding: 48px 0;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.main-calendar-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .main-calendar-wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Виджет календаря */
+.main-cal-widget {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.main-cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.main-cal-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.main-cal-nav {
+    background: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    line-height: 1;
+}
+
+    .main-cal-nav:hover {
+        background: #f8fafc;
+        border-color: #2a5298;
+        color: #2a5298;
+    }
+
+.main-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.main-cal-dayname {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: #94a3b8;
+    padding: 3px 0 7px;
+    text-transform: uppercase;
+}
+
+.main-cal-cell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    font-size: 12px;
+    color: #475569;
+    cursor: default;
+    gap: 2px;
+    transition: background 0.1s;
+    position: relative;
+}
+
+    .main-cal-cell.has-event {
+        cursor: pointer;
+    }
+
+        .main-cal-cell.has-event:hover {
+            background: #f1f5f9;
+        }
+
+    .main-cal-cell.today > span:first-child {
+        background: #1e3a7a;
+        color: #fff;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 11px;
+    }
+
+    .main-cal-cell.selected {
+        background: #eff6ff;
+        outline: 2px solid #2a5298;
+        outline-offset: -1px;
+    }
+
+    .main-cal-cell.empty {
+        cursor: default;
+    }
+
+.main-cal-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* Тренировки выбранного дня */
+.main-cal-events {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.main-cal-event {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 3px solid;
+}
+
+.main-cal-event-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.main-cal-event-meta {
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.main-cal-event-status {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.main-cal-no-events {
+    text-align: center;
+    font-size: 13px;
+    color: #94a3b8;
+    padding: 12px 0;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 8px;
+}
+
+.main-cal-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 10px;
+}
+
+    .main-cal-legend span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 11px;
+        color: #64748b;
+    }
+
+/* Быстрые действия */
+.main-quick-stats {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.main-quick-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 14px;
+}
+
+.main-quick-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+    .main-quick-btn:last-child {
+        margin-bottom: 0;
+    }
+
+    .main-quick-btn:hover {
+        background: #eff6ff;
+        border-color: #2a5298;
+        color: #2a5298;
+    }
+
+.main-quick-btn--import {
+    background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+    border-color: #bfdbfe;
+    color: #1e40af;
+    font-weight: 600;
+}
+
+    .main-quick-btn--import:hover {
+        background: linear-gradient(135deg, #dbeafe, #bae6fd);
+        border-color: #2a5298;
+    }
+/* ── Добавить в конец MainPage.css ── */
+
+/* Цитата дня */
+.quote-section {
+    padding: 32px 0;
+    background: #f8fafc;
+}
+
+.quote-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.quote-icon {
+    flex-shrink: 0;
+    color: #2a5298;
+    opacity: 0.6;
+}
+
+.quote-content {
+    flex: 1;
+}
+
+.quote-text {
+    font-size: 16px;
+    color: #1e293b;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 0 6px;
+}
+
+.quote-author {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 600;
+    margin: 0;
+}
+
+.quote-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #2a5298;
+    background: #eff6ff;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+@media(max-width:600px) {
+    .quote-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quote-badge {
+        position: static;
+        margin-top: 8px;
+    }
+}
+
+/* Виды спорта */
+.sports-section {
+    padding: 48px 0;
+}
+
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+
+@media(max-width:900px) {
+    .sports-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media(max-width:600px) {
+    .sports-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+.sport-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+    .sport-card:hover {
+        border-color: #2a5298;
+        box-shadow: 0 4px 16px rgba(42,82,152,0.12);
+        transform: translateY(-2px);
+    }
+
+.sport-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.sport-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 6px;
+}
+
+.sport-desc {
+    font-size: 11px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0 0 10px;
+}
+
+.sport-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2a5298;
+}
+
+/* Календарь */
+.main-calendar-section {
+    padding: 48px 0;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.main-calendar-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+@media(max-width:768px) {
+    .main-calendar-wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+.main-cal-widget {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.main-cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.main-cal-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.main-cal-nav {
+    background: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    line-height: 1;
+}
+
+    .main-cal-nav:hover {
+        background: #f8fafc;
+        border-color: #2a5298;
+        color: #2a5298;
+    }
+
+.main-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.main-cal-dayname {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: #94a3b8;
+    padding: 3px 0 7px;
+    text-transform: uppercase;
+}
+
+.main-cal-cell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    font-size: 12px;
+    color: #475569;
+    cursor: default;
+    gap: 2px;
+    transition: background 0.1s;
+}
+
+    .main-cal-cell.has-event, .main-cal-cell.clickable {
+        cursor: pointer;
+    }
+
+        .main-cal-cell.has-event:hover, .main-cal-cell.clickable:hover {
+            background: #f1f5f9;
+        }
+
+        .main-cal-cell.clickable:hover {
+            background: #eff6ff;
+        }
+
+    .main-cal-cell.today > span:first-child {
+        background: #1e3a7a;
+        color: #fff;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 11px;
+    }
+
+    .main-cal-cell.selected {
+        background: #eff6ff;
+        outline: 2px solid #2a5298;
+        outline-offset: -1px;
+    }
+
+.main-cal-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.main-cal-events {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.main-cal-event {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 3px solid;
+}
+
+.main-cal-event-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.main-cal-event-meta {
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.main-cal-event-status {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.main-cal-no-events {
+    text-align: center;
+    font-size: 13px;
+    color: #94a3b8;
+    padding: 12px 0;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 8px;
+}
+
+.main-cal-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 10px;
+}
+
+    .main-cal-legend span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 11px;
+        color: #64748b;
+    }
+
+/* Быстрые действия */
+.main-quick-stats {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.main-quick-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 14px;
+}
+
+.main-quick-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+    .main-quick-btn:last-child {
+        margin-bottom: 0;
+    }
+
+    .main-quick-btn:hover {
+        background: #eff6ff;
+        border-color: #2a5298;
+        color: #2a5298;
+    }
+
+.main-quick-btn--import {
+    background: linear-gradient(135deg,#eff6ff,#e0f2fe);
+    border-color: #bfdbfe;
+    color: #1e40af;
+    font-weight: 600;
+}
+
+    .main-quick-btn--import:hover {
+        background: linear-gradient(135deg,#dbeafe,#bae6fd);
+        border-color: #2a5298;
+    }
+
+/* Модалки */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 16px;
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 16px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+    .modal-header h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0;
+    }
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 2px 6px;
+}
+
+.form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1e293b;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+    .form-input:focus {
+        border-color: #2a5298;
+    }

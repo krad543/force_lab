@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="e7cefcec-a239-4af2-bf64-8991b7145981" name="sport_club@localhost Mapping">
+      <data-sources db="3e66b71d-2fda-4a4c-af9e-fc2a4105386f" />
+      <scope>
+        <node kind="database" negative="1" />
+      </scope>
+    </mapping>
+  </component>
+</project>
